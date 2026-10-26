@@ -1,17 +1,17 @@
 context:
   name: django-polymorphic-tree
-  version: 2.1
+  version: "2.1.1"
 
 package:
   name: ${{ name|lower }}
   version: ${{ version }}
 
 source:
-  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/django-polymorphic-tree-${{ version }}.tar.gz
-  sha256: a6d40c2ef350c5a50bd83727ca8cba85088890a7a08a106caeb3c5dc5ae072aa
+  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/${{ name | replace('-', '_') }}-${{ version }}.tar.gz
+  sha256: 84091e43d99687f226a62dcc720f8ca876f1b2f64ff611c86ac65b30ceec49fc
 
 build:
-  number: 2
+  number: 0
   noarch: python
   script: ${{ PYTHON }} -m pip install . -vv
 
